@@ -19,7 +19,7 @@
         <!--PageVC-->
         <scene sceneID="Aob-L2-oEC">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="oAG-o9-x19" customClass="PageVC" customModule="WeatherGift" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="oAG-o9-x19" customClass="PageVC" customModule="WeatherGift" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r9Y-vf-2Xf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-178" y="-956"/>
@@ -27,13 +27,13 @@
         <!--DetailVC-->
         <scene sceneID="43b-Zh-MUL">
             <objects>
-                <viewController id="s9i-OZ-1wp" customClass="DetailVC" customModule="WeatherGift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailVC" id="s9i-OZ-1wp" customClass="DetailVC" customModule="WeatherGift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ENV-Eo-Fg6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5fY-Ns-nHr">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="225"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="225"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZhT-Ue-jZS">
                                         <rect key="frame" x="0.0" y="0.0" width="160" height="225"/>
@@ -78,10 +78,17 @@
                         <constraints>
                             <constraint firstItem="5fY-Ns-nHr" firstAttribute="leading" secondItem="HDL-b7-0Jd" secondAttribute="leading" id="6OX-sK-uQd"/>
                             <constraint firstItem="5fY-Ns-nHr" firstAttribute="trailing" secondItem="HDL-b7-0Jd" secondAttribute="trailing" id="gw8-vr-jL2"/>
-                            <constraint firstItem="5fY-Ns-nHr" firstAttribute="top" secondItem="ENV-Eo-Fg6" secondAttribute="top" id="vcp-pj-Z4p"/>
+                            <constraint firstItem="5fY-Ns-nHr" firstAttribute="top" secondItem="ENV-Eo-Fg6" secondAttribute="top" constant="20" id="vcp-pj-Z4p"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HDL-b7-0Jd"/>
                     </view>
+                    <connections>
+                        <outlet property="currentImage" destination="ZhT-Ue-jZS" id="BlR-3p-dWy"/>
+                        <outlet property="dateLabel" destination="Nex-di-sP4" id="yja-yo-Caf"/>
+                        <outlet property="locationLabel" destination="e2t-Xw-hzq" id="LMe-p2-pdu"/>
+                        <outlet property="summaryLabel" destination="LKH-ca-pR7" id="t40-s4-fhx"/>
+                        <outlet property="temperatureLabel" destination="x3N-bf-DaG" id="Mzu-7x-4se"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="taM-iY-Vxu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
