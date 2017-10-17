@@ -11,7 +11,7 @@ import UIKit
 class PageVC: UIPageViewController {
     
     var currentPage = 0
-    var locationsArray = ["Local City", "Chestnut Hill, MA", "New York, NY"]
+    var locationsArray = ["Local City", "Chestnut Hill, MA", "New York, NY", "Uglich, Russia"]
     
     var pageControl: UIPageControl!
     var barButtonWidth: CGFloat = 44
