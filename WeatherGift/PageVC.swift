@@ -16,6 +16,7 @@ class PageVC: UIPageViewController {
     var pageControl: UIPageControl!
     var barButtonWidth: CGFloat = 44
     var barButtonHeight: CGFloat = 44
+    var listButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +31,7 @@ class PageVC: UIPageViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         configurePageControl()
+        configureListButton()
     }
     
     //Page control
@@ -46,7 +48,39 @@ class PageVC: UIPageViewController {
         view.addSubview(pageControl)
     }
     
-    // MARK: - Create view controller for UIPageViewController
+    //Buttons
+    func configureListButton() {
+        let barButtonHeight = barButtonWidth
+        listButton = UIButton(frame: CGRect(x: view.frame.width - barButtonWidth, y: view.frame.height - barButtonHeight, width: barButtonWidth, height: barButtonHeight))
+        listButton.setBackgroundImage(UIImage(named: "listbutton"), for: .normal)
+        listButton.setBackgroundImage(UIImage(named: "listbutton-highlighted"), for: .highlighted)
+        listButton.addTarget(self, action: #selector(segueToListVC), for: .touchUpInside)
+        
+        view.addSubview(listButton)
+    }
+    
+    //MARK:- Segues
+    @objc func segueToListVC(sender: UIButton!) {
+       performSegue(withIdentifier: "ToListVC", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ToListVC" {
+            let controller = segue.destination as! ListVC
+            controller.locationsArray = locationsArray
+            controller.currentPage = currentPage
+        }
+    }
+
+    @IBAction func unwindFromListVC(sender: UIStoryboardSegue) {
+        // Configure the pageControl
+        pageControl.numberOfPages = locationsArray.count
+        pageControl.currentPage = currentPage
+        // Create the child page for the location clicked in the table view
+        setViewControllers([createDetailVC(forPage: currentPage)], direction: .forward, animated: false, completion: nil)
+    }
+    
+    //MARK:- Create view controller for UIPageViewController
     func createDetailVC(forPage page: Int) -> DetailVC {
         
         currentPage = min(max(0, page), locationsArray.count-1)
