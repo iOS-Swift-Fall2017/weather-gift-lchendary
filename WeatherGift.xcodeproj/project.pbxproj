@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		70CD9EBAF88DCEFC6C6967FF /* Pods_WeatherGift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF6F9BB97B7A3A756317094D /* Pods_WeatherGift.framework */; };
 		BF826AC21F9FBD8B005CC7F2 /* WeatherLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF826AC11F9FBD8B005CC7F2 /* WeatherLocation.swift */; };
+		BF826AC41F9FDB38005CC7F2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF826AC31F9FDB38005CC7F2 /* Constants.swift */; };
 		BF8280861F966A7F00BA32D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8280851F966A7F00BA32D9 /* AppDelegate.swift */; };
 		BF82808D1F966A7F00BA32D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF82808C1F966A7F00BA32D9 /* Assets.xcassets */; };
 		BF8280901F966A7F00BA32D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF82808E1F966A7F00BA32D9 /* LaunchScreen.storyboard */; };
@@ -23,6 +24,7 @@
 		1C1453A5B1B5C645635FFC7A /* Pods-WeatherGift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherGift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherGift/Pods-WeatherGift.debug.xcconfig"; sourceTree = "<group>"; };
 		BF2916811F9FB2AA00A3B451 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		BF826AC11F9FBD8B005CC7F2 /* WeatherLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherLocation.swift; sourceTree = "<group>"; };
+		BF826AC31F9FDB38005CC7F2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BF8280821F966A7F00BA32D9 /* WeatherGift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherGift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF8280851F966A7F00BA32D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF82808C1F966A7F00BA32D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 				BF9884281F96745200704851 /* PageVC.swift */,
 				BF8280971F966D5000BA32D9 /* DetailVC.swift */,
 				BF8280991F9670B100BA32D9 /* ListVC.swift */,
+				BF826AC31F9FDB38005CC7F2 /* Constants.swift */,
 				BF82808C1F966A7F00BA32D9 /* Assets.xcassets */,
 				BFF0A1F31F9672850079587A /* Main.storyboard */,
 				BF82808E1F966A7F00BA32D9 /* LaunchScreen.storyboard */,
@@ -227,6 +230,7 @@
 				BF9884291F96745200704851 /* PageVC.swift in Sources */,
 				BF8280861F966A7F00BA32D9 /* AppDelegate.swift in Sources */,
 				BF8280981F966D5000BA32D9 /* DetailVC.swift in Sources */,
+				BF826AC41F9FDB38005CC7F2 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
