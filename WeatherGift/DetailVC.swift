@@ -9,6 +9,13 @@
 import UIKit
 import CoreLocation
 
+private let dateFormatter: DateFormatter = {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "EEEE, MMM, dd, y"
+    print("%%%% Date Formatter just created in DetailVC")
+    return dateFormatter
+}()
+
 class DetailVC: UIViewController {
     
     @IBOutlet weak var dateLabel: UILabel!
@@ -17,6 +24,7 @@ class DetailVC: UIViewController {
     @IBOutlet weak var summaryLabel: UILabel!
     @IBOutlet weak var currentImage: UIImageView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     var currentPage = 0
     var locationsArray = [WeatherLocation]()
@@ -29,6 +37,9 @@ class DetailVC: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        
         
         locationLabel.text = locationsArray[currentPage].name
         dateLabel.text = locationsArray[currentPage].coordinates
@@ -50,8 +61,7 @@ class DetailVC: UIViewController {
         
         let location = locationsArray[currentPage]
         locationLabel.text = location.name
-        
-        let dateString = formatTimeForTimeZone(unixDate: location.currentTime, timeZone: location.timeZone)
+        let dateString = location.currentTime.format(timeZone: location.timeZone, dateFormatter:  dateFormatter)
         
         dateLabel.text = dateString
         
@@ -61,27 +71,7 @@ class DetailVC: UIViewController {
         
         //If you don't do this there wont be any data.
         tableView.reloadData()
-    }
-    
-    func formatTimeForTimeZone(unixDate: TimeInterval, timeZone: String) -> String {
-        // Convert the Unix date to a usable iOS Date type
-        let usableDate = Date(timeIntervalSince1970: unixDate)
-        
-        // Create a DateFormatter object called dateFormatter
-        let dateFormatter = DateFormatter()
-        
-        // Set the .dateFormat property of the DateFormatter object
-        // to convert Weekday (EEEE), Month abbreviation (MMM) day (dd), year (y)
-        dateFormatter.dateFormat = "EEEE, MMM dd, y"
-        
-        // Set the .timeZone property of hte DateFormatter object
-        dateFormatter.timeZone = TimeZone(identifier: timeZone)
-        
-        // Convert the iOS Date, usableDate, to a .dateFormatted string in .timeZone.
-        let dateString = dateFormatter.string(from: usableDate)
-        
-        // Return the formatted String
-        return dateString
+        collectionView.reloadData()
     }
     
 }
@@ -168,7 +158,7 @@ extension DetailVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DayWeatherCell") as! DayWeatherCell
         let dailyForecast = locationsArray[currentPage].dailyForecastArray[indexPath.row]
-        cell.update(with: dailyForecast)
+        cell.update(with: dailyForecast, timeZone: self.locationsArray[currentPage].timeZone)
         return cell
     }
     
@@ -176,6 +166,19 @@ extension DetailVC: UITableViewDelegate, UITableViewDataSource {
         return 80
     }
     
+}
+
+extension DetailVC: UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return locationsArray[currentPage].hourlyForecastArray.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let hourlyCell = collectionView.dequeueReusableCell(withReuseIdentifier: "HourlyCell", for: indexPath) as! HourlyWeatherCell
+        hourlyCell.update(hourlyForecast: self.locationsArray[currentPage].hourlyForecastArray[indexPath.row], timeZone: self.locationsArray[currentPage].timeZone)
+        return hourlyCell
+    }
 }
 
 

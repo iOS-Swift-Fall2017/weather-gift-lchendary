@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		70CD9EBAF88DCEFC6C6967FF /* Pods_WeatherGift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF6F9BB97B7A3A756317094D /* Pods_WeatherGift.framework */; };
 		BF1767281FA8FAE400815798 /* DayWeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1767271FA8FAE400815798 /* DayWeatherCell.swift */; };
+		BF52ED401FB243FF00FAD25E /* TimeInterval+format.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF52ED3F1FB243FF00FAD25E /* TimeInterval+format.swift */; };
+		BF52ED421FB24CEE00FAD25E /* HourlyWeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF52ED411FB24CEE00FAD25E /* HourlyWeatherCell.swift */; };
+		BF52ED441FB2563C00FAD25E /* WeatherUserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF52ED431FB2563C00FAD25E /* WeatherUserDefault.swift */; };
 		BF826AC21F9FBD8B005CC7F2 /* WeatherLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF826AC11F9FBD8B005CC7F2 /* WeatherLocation.swift */; };
 		BF826AC41F9FDB38005CC7F2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF826AC31F9FDB38005CC7F2 /* Constants.swift */; };
 		BF8280861F966A7F00BA32D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8280851F966A7F00BA32D9 /* AppDelegate.swift */; };
@@ -25,6 +28,9 @@
 		1C1453A5B1B5C645635FFC7A /* Pods-WeatherGift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherGift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherGift/Pods-WeatherGift.debug.xcconfig"; sourceTree = "<group>"; };
 		BF1767271FA8FAE400815798 /* DayWeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayWeatherCell.swift; sourceTree = "<group>"; };
 		BF2916811F9FB2AA00A3B451 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		BF52ED3F1FB243FF00FAD25E /* TimeInterval+format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+format.swift"; sourceTree = "<group>"; };
+		BF52ED411FB24CEE00FAD25E /* HourlyWeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherCell.swift; sourceTree = "<group>"; };
+		BF52ED431FB2563C00FAD25E /* WeatherUserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherUserDefault.swift; sourceTree = "<group>"; };
 		BF826AC11F9FBD8B005CC7F2 /* WeatherLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherLocation.swift; sourceTree = "<group>"; };
 		BF826AC31F9FDB38005CC7F2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BF8280821F966A7F00BA32D9 /* WeatherGift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherGift.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,9 +91,12 @@
 				BF826AC11F9FBD8B005CC7F2 /* WeatherLocation.swift */,
 				BF9884281F96745200704851 /* PageVC.swift */,
 				BF8280971F966D5000BA32D9 /* DetailVC.swift */,
+				BF52ED431FB2563C00FAD25E /* WeatherUserDefault.swift */,
+				BF52ED411FB24CEE00FAD25E /* HourlyWeatherCell.swift */,
 				BF1767271FA8FAE400815798 /* DayWeatherCell.swift */,
 				BF8280991F9670B100BA32D9 /* ListVC.swift */,
 				BF826AC31F9FDB38005CC7F2 /* Constants.swift */,
+				BF52ED3F1FB243FF00FAD25E /* TimeInterval+format.swift */,
 				BF82808C1F966A7F00BA32D9 /* Assets.xcassets */,
 				BFF0A1F31F9672850079587A /* Main.storyboard */,
 				BF82808E1F966A7F00BA32D9 /* LaunchScreen.storyboard */,
@@ -229,9 +238,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF1767281FA8FAE400815798 /* DayWeatherCell.swift in Sources */,
+				BF52ED421FB24CEE00FAD25E /* HourlyWeatherCell.swift in Sources */,
 				BF826AC21F9FBD8B005CC7F2 /* WeatherLocation.swift in Sources */,
 				BF82809A1F9670B100BA32D9 /* ListVC.swift in Sources */,
 				BF9884291F96745200704851 /* PageVC.swift in Sources */,
+				BF52ED441FB2563C00FAD25E /* WeatherUserDefault.swift in Sources */,
+				BF52ED401FB243FF00FAD25E /* TimeInterval+format.swift in Sources */,
 				BF8280861F966A7F00BA32D9 /* AppDelegate.swift in Sources */,
 				BF8280981F966D5000BA32D9 /* DetailVC.swift in Sources */,
 				BF826AC41F9FDB38005CC7F2 /* Constants.swift in Sources */,
